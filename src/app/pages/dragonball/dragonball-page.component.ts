@@ -1,4 +1,5 @@
-import { Component, signal } from "@angular/core";
+import { NgClass } from "@angular/common";
+import { Component, computed, signal } from "@angular/core";
 
 interface Character {
     id: number;
@@ -7,7 +8,9 @@ interface Character {
 }
 
 @Component({
-    imports: [],
+    imports: [
+        // NgClass
+    ],
     templateUrl: './dragonball-page.component.html'
 })
 export class DragonBallPageComponent {
@@ -17,4 +20,10 @@ export class DragonBallPageComponent {
         { id: 3, name: 'Trunks', power: 8000 },
         { id: 4, name: 'Gohan', power: 9500 },
     ])
+
+    // powerClasses = computed(() => {
+    //     return {
+    //         'text-danger': true,
+    //     }
+    // })
 }
