@@ -8,16 +8,22 @@
         <button class="mt-2 btn btn-outline-primary">Agregar</button>
     </div>
     <div class="col-12 col-sm-6">
-        <h3>Listado</h3>
+        <h3>Listado Fuertes</h3>
         <ul>
             @for (character of characters(); track character.id; let idx = $index) {
-                <li>
-                    <span>{{ idx + 1 }} - {{ character.name }}</span>
-                    <strong [class.text-danger]="character.power > 9000" [class.text-primary]="character.power < 9000">
-                        <!-- [ngClass]="powerClasses()" -->
-                        ({{ character.power }})
-                    </strong>
-                </li>
+                @if(character.power > 500 ) {
+                    <li>
+                        <span>{{ idx + 1 }} - {{ character.name }}</span>
+                        <strong [class.text-danger]="character.power > 9000" [class.text-primary]="character.power < 9000">
+                            <!-- [ngClass]="powerClasses()" -->
+                            ({{ character.power }})
+                        </strong>
+                    </li>
+                } @else {
+                    <li>
+                        <span><strong>Aquí no hay nadie</strong></span>
+                    </li>
+                }
             }
         </ul>
     </div>

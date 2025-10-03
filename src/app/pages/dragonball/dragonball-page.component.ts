@@ -19,6 +19,7 @@ export class DragonBallPageComponent {
         { id: 2, name: 'Vegeta', power: 12000 },
         { id: 3, name: 'Trunks', power: 8000 },
         { id: 4, name: 'Gohan', power: 9500 },
+        { id: 5, name: 'Yamcha', power: 500 },
     ])
 
     // powerClasses = computed(() => {
