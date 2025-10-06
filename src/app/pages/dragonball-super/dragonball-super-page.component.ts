@@ -1,30 +1,20 @@
-import { NgClass } from "@angular/common";
-import { Component, computed, signal } from "@angular/core";
+import { Component, signal } from "@angular/core";
+import { CharacterListComponent } from "../../components/dragonball/character-list/character-list.component";
 import { Character } from "../../interfaces/character.interface";
 
 @Component({
-    imports: [
-        // NgClass
-    ],
-    templateUrl: './dragonball-page.component.html'
+    selector: 'dragonball-super',
+    templateUrl: './dragonball-super-page.component.html',
+    imports: [CharacterListComponent],
 })
-export class DragonBallPageComponent {
+export class DragonBallSuperPageComponent {
     name = signal('');
     power = signal(0);
 
     characters = signal<Character[]>([
         { id: 1, name: 'Goku', power: 15000 },
-        // { id: 2, name: 'Vegeta', power: 12000 },
-        // { id: 3, name: 'Trunks', power: 8000 },
-        // { id: 4, name: 'Gohan', power: 9500 },
-        // { id: 5, name: 'Yamcha', power: 500 },
+        { id: 2, name: 'Vegeta', power: 12000 },
     ])
-
-    // powerClasses = computed(() => {
-    //     return {
-    //         'text-danger': true,
-    //     }
-    // })
 
     addCharacter() {
         if(!this.name() || !this.power() || this.power() <= 0) return;
