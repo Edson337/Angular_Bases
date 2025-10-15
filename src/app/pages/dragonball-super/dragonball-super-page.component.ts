@@ -11,6 +11,10 @@ import { CharacterAddComponent } from "../../components/dragonball/character-add
 export class DragonBallSuperPageComponent {
     characters = signal<Character[]>([
         { id: 1, name: 'Goku', power: 15000 },
-        { id: 2, name: 'Vegeta', power: 12000 },
+        { id: 2, name: 'Vegeta', power: 8000 },
     ])
+
+    addCharacter(newCharacter: Character) {
+        this.characters.update((list) => [...list, newCharacter]);
+    }
 }
