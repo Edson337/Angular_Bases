@@ -1,4 +1,4 @@
-<h3>Listado Fuertes</h3>
+<h3>{{ listName() }}</h3>
 <ul>
     @for (character of characters(); track character.id; let idx = $index) {
         @if(character.power > 500 ) {
@@ -10,9 +10,7 @@
                 </strong>
             </li>
         } @else {
-            <li>
-                <span><strong>Aquí no hay nadie</strong></span>
-            </li>
+            <li><strong>Aquí no hay nadie</strong></li>
         }
     }
 </ul>
